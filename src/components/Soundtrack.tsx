@@ -110,23 +110,41 @@ export function Soundtrack() {
           }
         `}</style>
 
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--purple-500)] text-white font-semibold hover:bg-[var(--purple-600)] transition-colors"
-        >
-          {expanded ? "Hide Lyrics" : "View Lyrics"}
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="https://suno.com/song/bc85fd00-3db2-43d8-89bc-016bb6811285?sh=fD25b8PognKQjWJ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[var(--gray-950)] font-semibold hover:bg-[var(--gray-100)] transition-colors"
           >
-            <path d="M4 6l4 4 4-4" />
-          </svg>
-        </button>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M6.5 3.5a1 1 0 011.55-.83l10 6.5a1 1 0 010 1.66l-10 6.5A1 1 0 016.5 16.5v-13z" />
+            </svg>
+            Play the Song
+          </a>
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--purple-500)] text-white font-semibold hover:bg-[var(--purple-600)] transition-colors"
+          >
+            {expanded ? "Hide Lyrics" : "View Lyrics"}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+            >
+              <path d="M4 6l4 4 4-4" />
+            </svg>
+          </button>
+        </div>
 
         {expanded && (
           <div className="mt-8 text-left bg-white/5 rounded-2xl p-8 border border-white/10 animate-fade-in-up">
