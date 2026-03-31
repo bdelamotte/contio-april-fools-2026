@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&family=Merriweather:wght@300;400;700;900&display=swap');
+
+:root {
+  /* Brand Purple */
+  --purple-500: #7260d4;
+  --purple-600: #563fd4;
+  --purple-700: #4229c7;
+  --purple-800: #331da7;
+  --purple-900: #200d7b;
+  --purple-950: #120454;
+
+  /* Blue Contio */
+  --blue-500: #35a3f1;
+  --blue-600: #1898f3;
+  --blue-700: #0577c9;
+
+  /* Gray Contio */
+  --gray-25: #fafdff;
+  --gray-50: #f2f7fa;
+  --gray-100: #dfeaf2;
+  --gray-200: #c6d4de;
+  --gray-300: #a3b2bf;
+  --gray-400: #8898a6;
+  --gray-500: #6d7e8c;
+  --gray-600: #556573;
+  --gray-700: #3f4d59;
+  --gray-800: #252f38;
+  --gray-900: #13191e;
+  --gray-950: #080b0d;
+
+  /* Navy Contio */
+  --navy-700: #1b3a57;
+  --navy-800: #0e2a44;
+  --navy-900: #082139;
+  --navy-950: #011528;
+
+  /* Semantic */
+  --background: #ffffff;
+  --background-page: #f2f7fa;
+  --foreground: #13191e;
+  --brand-solid: #563fd4;
+  --brand-light: #f8f7ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Lato', sans-serif;
+  --font-display: 'Merriweather', serif;
+}
+
+body {
+  background: var(--background-page);
+  color: var(--foreground);
+  font-family: 'Lato', sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
