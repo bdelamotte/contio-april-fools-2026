@@ -6,6 +6,7 @@ import { Differentiators } from "@/components/Differentiators";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
+import { Soundtrack } from "@/components/Soundtrack";
 import { Reveal } from "@/components/Reveal";
 import { Footer } from "@/components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <HowItWorks />
         <Features />
         <Pricing />
+        <Soundtrack />
         <Reveal />
       </main>
       <Footer />

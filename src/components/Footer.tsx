@@ -9,7 +9,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <MeatingOSLogo className="h-8 w-auto [&_text]:fill-white [&_path]:fill-[var(--purple-500)]" />
+            <MeatingOSLogo className="h-8 w-auto brightness-0 invert" />
             <p className="mt-4 text-sm text-[var(--gray-400)] max-w-sm leading-relaxed">
               Killing bad meals and transforming the rest into a force for
               accomplishing great gains. A product of too many briskets and not
