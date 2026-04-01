@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MeatingOSLogo } from "./MeatingOSLogo";
+import posthog from "posthog-js";
 
 const CTA_URL =
   "https://contio.ai?utm_source=meatingos&utm_medium=aprilfools&utm_campaign=nav";
@@ -38,6 +39,7 @@ export function Nav() {
           </a>
           <a
             href={CTA_URL}
+            onClick={() => posthog.capture("nav_cta_clicked", { location: "desktop" })}
             className="text-sm font-semibold text-white bg-[var(--brand-solid)] hover:bg-[var(--purple-700)] px-5 py-2.5 rounded-full transition-colors"
           >
             Get Started
@@ -93,6 +95,7 @@ export function Nav() {
           </a>
           <a
             href={CTA_URL}
+            onClick={() => posthog.capture("nav_cta_clicked", { location: "mobile" })}
             className="text-sm font-semibold text-white bg-[var(--brand-solid)] px-5 py-2.5 rounded-full text-center"
           >
             Get Started

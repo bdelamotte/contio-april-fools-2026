@@ -1,3 +1,7 @@
+"use client";
+
+import posthog from "posthog-js";
+
 const CTA_URL =
   "https://contio.ai?utm_source=meatingos&utm_medium=aprilfools&utm_campaign=pricing";
 
@@ -197,6 +201,13 @@ export function Pricing() {
 
               <a
                 href={CTA_URL}
+                onClick={() =>
+                  posthog.capture("pricing_cta_clicked", {
+                    plan_name: plan.name,
+                    plan_price: plan.price,
+                    cta_label: plan.cta,
+                  })
+                }
                 className={`mt-6 block text-center py-3 rounded-full font-semibold text-sm transition-colors ${
                   plan.highlight
                     ? "bg-white text-[var(--brand-solid)] hover:bg-[var(--gray-100)]"

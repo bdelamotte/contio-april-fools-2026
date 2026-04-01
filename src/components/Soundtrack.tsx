@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import posthog from "posthog-js";
 
 const lyrics = `[Intro – spoken over chugging riff]
 "Rare… no, extra rare. And bring the side of meat."
@@ -115,6 +116,7 @@ export function Soundtrack() {
             href="https://suno.com/song/bc85fd00-3db2-43d8-89bc-016bb6811285?sh=fD25b8PognKQjWJ5"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture("anthem_play_clicked")}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[var(--gray-950)] font-semibold hover:bg-[var(--gray-100)] transition-colors"
           >
             <svg
@@ -128,7 +130,11 @@ export function Soundtrack() {
             Play the Song
           </a>
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => {
+              const next = !expanded;
+              setExpanded(next);
+              posthog.capture("anthem_lyrics_toggled", { expanded: next });
+            }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--purple-500)] text-white font-semibold hover:bg-[var(--purple-600)] transition-colors"
           >
             {expanded ? "Hide Lyrics" : "View Lyrics"}

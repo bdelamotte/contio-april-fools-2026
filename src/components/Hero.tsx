@@ -1,3 +1,7 @@
+"use client";
+
+import posthog from "posthog-js";
+
 const CTA_URL =
   "https://contio.ai?utm_source=meatingos&utm_medium=aprilfools&utm_campaign=hero";
 
@@ -29,6 +33,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up stagger-3">
           <a
             href={CTA_URL}
+            onClick={() => posthog.capture("hero_cta_clicked")}
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--brand-solid)] text-white font-semibold rounded-full hover:bg-[var(--purple-700)] transition-colors text-lg shadow-lg shadow-[var(--brand-solid)]/25"
           >
             Start Meating Better
@@ -45,6 +50,7 @@ export function Hero() {
           </a>
           <a
             href="#how-it-works"
+            onClick={() => posthog.capture("hero_explore_clicked")}
             className="inline-flex items-center gap-2 px-8 py-3.5 text-[var(--gray-700)] font-semibold rounded-full border border-[var(--gray-200)] hover:border-[var(--gray-300)] hover:bg-[var(--gray-25)] transition-colors text-lg"
           >
             Explore MeatingOS

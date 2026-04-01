@@ -1,3 +1,7 @@
+"use client";
+
+import posthog from "posthog-js";
+
 const REAL_CTA =
   "https://contio.ai?utm_source=meatingos&utm_medium=aprilfools&utm_campaign=reveal";
 
@@ -21,6 +25,7 @@ export function Reveal() {
         </p>
         <a
           href={REAL_CTA}
+          onClick={() => posthog.capture("reveal_cta_clicked")}
           className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--brand-solid)] font-bold rounded-full hover:bg-[var(--gray-100)] transition-colors text-lg shadow-xl"
         >
           Try the Real MeetingOS

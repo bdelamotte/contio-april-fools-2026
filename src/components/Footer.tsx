@@ -1,3 +1,6 @@
+"use client";
+
+import posthog from "posthog-js";
 import { MeatingOSLogo } from "./MeatingOSLogo";
 
 const REAL_URL =
@@ -19,6 +22,7 @@ export function Footer() {
               An April Fools&apos; production from the team at{" "}
               <a
                 href={REAL_URL}
+                onClick={() => posthog.capture("footer_real_product_clicked", { link_label: "Contio" })}
                 className="text-[var(--purple-500)] hover:text-[var(--purple-400)] underline"
               >
                 Contio
@@ -57,6 +61,7 @@ export function Footer() {
               <li>
                 <a
                   href={REAL_URL}
+                  onClick={() => posthog.capture("footer_real_product_clicked", { link_label: "The Real MeetingOS" })}
                   className="text-sm text-[var(--gray-400)] hover:text-white transition-colors"
                 >
                   The Real MeetingOS
@@ -102,18 +107,21 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a
               href={REAL_URL}
+              onClick={() => posthog.capture("footer_real_product_clicked", { link_label: "Terms of Seasoning" })}
               className="text-xs text-[var(--gray-500)] hover:text-white transition-colors"
             >
               Terms of Seasoning
             </a>
             <a
               href={REAL_URL}
+              onClick={() => posthog.capture("footer_real_product_clicked", { link_label: "Privacy Poultry" })}
               className="text-xs text-[var(--gray-500)] hover:text-white transition-colors"
             >
               Privacy Poultry
             </a>
             <a
               href={REAL_URL}
+              onClick={() => posthog.capture("footer_real_product_clicked", { link_label: "Security & Complian-steak" })}
               className="text-xs text-[var(--gray-500)] hover:text-white transition-colors"
             >
               Security & Complian-steak

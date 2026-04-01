@@ -14,12 +14,20 @@ export const metadata: Metadata = {
     description:
       "AI that turns what gets grilled into what gets fulfilled.",
     type: "website",
+    images: [
+      {
+        url: "https://meatingos.com/og-image.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "MeatingOS",
     description:
       "The world's first Decision Acceleration Platform for Protein.",
+    images: ["https://meatingos.com/og-image.png"],
   },
 };
 
